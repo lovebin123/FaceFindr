@@ -143,7 +143,7 @@ def remove_files(file_names):
         except PermissionError:
             logging.error(f"Permission denied when trying to remove file: {name}")
         except Exception as e:
-            logging.error(f"An error occurred while trying to remove file {name}: {e}")
+            logging.error(f"An error occurred while trying to remove a file {name}: {e}")
 
 @app.route('/upload', methods=['POST'])
 def upload_file():
