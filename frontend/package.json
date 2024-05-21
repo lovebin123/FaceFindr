@@ -16,13 +16,19 @@
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
     "@techstark/opencv-js": "^4.9.0-release.3",
+    "axios": "^1.6.8",
     "components": "^0.1.0",
+    "cors": "^2.8.5",
+    "ioredis": "^5.4.1",
     "jimp": "^0.22.12",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.51.3",
     "react-router-dom": "^6.23.0",
-    "simplex-noise": "^4.0.1"
+    "redis": "^4.6.13",
+    "scss": "^0.2.4",
+    "simplex-noise": "^4.0.1",
+    "styled-components": "^6.1.11"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",

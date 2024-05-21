@@ -2,27 +2,32 @@ import { ChakraProvider, Flex } from '@chakra-ui/react'
 import React from 'react'
 import Sidebar from './components/Sidebar'
 import { Meteors } from './components/ui/meteors'
-import Vortex from './components/ui/vortex'
+import { Outlet } from 'react-router-dom'
 
 
 function Layout() {
   return (
-
+<ChakraProvider >
     <Flex
       style={{
-        background: 'linear-gradient(68.6deg, rgb(252, 165, 241) 1.8%, rgb(181, 255, 255) 100.5%)',
-          
+        background: '#303841',
+       
       }}
+      direction={'column'} 
+       h={'100vh'} w={'100vw'} 
       
     >
-      <Meteors number={90}  />
-      <ChakraProvider >
-
-        <Flex direction={'column'} justifyContent={'center'} alignItems={'center'} >
+     <Flex justifyContent={'center'}  >
           <Sidebar />
         </Flex>
-      </ChakraProvider>
+     
+       
+      <div  >
+                <Outlet />
+            </div>
     </Flex>
+    </ChakraProvider>
+
 
 
 

@@ -2,23 +2,19 @@ import { Flex,Tabs,TabList, Tab ,Text, TabPanel, TabPanels} from '@chakra-ui/rea
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Facedetector from '../pages/Facedetector'
+import Facegallary from '../pages/Facegallary'
 
 function Sidebar() {
   return (
-    <Flex  justifyContent={'center'} p={8} minH={'100vh'}
-    minW={'100vw'}
-     >
-   <Tabs variant={'soft-rounded'} colorScheme='blue' align='center' >
-    <TabList gap={80}>
-      <Tab as={Link} to={'/dash/home'} ><Text>Home</Text></Tab>
-      <Tab as={Link} to={'/dash/photo'}><Text>Photo Gallary</Text></Tab>
-    </TabList>
-    <TabPanels pt={80}>
-      <TabPanel>
-        <Facedetector/>
-      </TabPanel>
+    <Flex p={8}   
     
-    </TabPanels>
+     >
+   <Tabs variant={'soft-rounded'} colorScheme='#00ADB5'  >
+    <TabList gap={80}  >
+      <Tab as={Link} to={'/home'}  borderColor={'#00ADB5'} borderWidth={2}><Text color={'#EEEEEE'}>Home</Text></Tab>
+      <Tab as={Link} to={'/photo'} borderColor={'#00ADB5'} borderWidth={2}><Text color={'#EEEEEE'}>Photo Gallary</Text></Tab>
+    </TabList>
+   
    </Tabs>
     </Flex>
   )
