@@ -63,14 +63,14 @@ function Facegallary() {
         <Avatar src={item.key} size={'2xl'} borderColor={'#00ADB5'} borderWidth={4} objectFit={'cover'} />
         </Flex>
       ))}
-      <Modal isOpen={isOpen} onClose={onClose} size={'4xl'} >
+      <Modal isOpen={isOpen} onClose={onClose} size={'4xl'}   >
   <ModalOverlay />
-  <ModalContent background={'#3A4750'}>
+  <ModalContent background={'#3A4750'} >
     <ModalCloseButton color={'#EEEEEE'} />
     <ModalBody>
-      <Flex flexWrap="wrap" gap={10}>
+      <Flex flexWrap="wrap" gap={10} flexShrink={1} >
         {selectedImages.map((image, index) => (
-          <Image key={index} src={image.trim()} w={'18vw'}  borderRadius="12px"  />
+          <Image margin={"0 auto"} position={'relative'} top={4}   borderRadius={12} key={index} src={image.trim()} w={'18vw'}    />
         ))}
       </Flex>
     </ModalBody>

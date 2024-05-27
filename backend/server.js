@@ -5,7 +5,7 @@ const cors=require('cors')
 const app = express();
 const redisClient = new Redis({
   host: process.env.REDIS_HOST,
-  port:Number(process.env.REDIS_PORT),
+  port:parseInt(process.env.REDIS_PORT),
   password: process.env.REDIS_PASSWORD,
 });
 app.use(cors())
@@ -16,7 +16,6 @@ app.get('/dash/keys', async (req, res) => {
       const values = await redisClient.hget(key,'matched_photos'); // Get all field-value pairs for the key
       return { key, values };
     }));
-    console.log(results)
     res.json(results); // Send the results as JSON
   } catch (error) {
     console.error('Error getting keys and field-value mappings:', error);
