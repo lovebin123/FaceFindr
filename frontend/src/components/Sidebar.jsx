@@ -9,9 +9,9 @@ function Sidebar() {
     <Flex p={8}   
     
      >
-   <Tabs variant={'soft-rounded'} colorScheme='#00ADB5'  >
+   <Tabs defaultIndex={1} variant={'soft-rounded'} colorScheme='#00ADB5'  >
     <TabList gap={80}  >
-      <Tab as={Link} to={'/home'}  borderColor={'#00ADB5'} borderWidth={2}><Text color={'#EEEEEE'}>Home</Text></Tab>
+      <Tab defaultChecked as={Link} to={'/home'}  borderColor={'#00ADB5'} borderWidth={2}><Text color={'#EEEEEE'}>Home</Text></Tab>
       <Tab as={Link} to={'/photo'} borderColor={'#00ADB5'} borderWidth={2}><Text color={'#EEEEEE'}>Photo Gallary</Text></Tab>
     </TabList>
    

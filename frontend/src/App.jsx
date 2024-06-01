@@ -15,7 +15,7 @@ function App() {
                     {/* Define the layout for paths starting with "/dash" */}
                     <Route path="/*" element={<Layout />} >
                     {/* Define the home page */}
-                    <Route path='home' element={<Facedetector />} />
+                    <Route path='/*' element={<Facedetector />} />
                     <Route path="photo" element={<Facegallary/>}/>
                     </Route>
                 </Routes>
