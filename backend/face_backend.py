@@ -153,9 +153,14 @@ def upload_file():
     if file.filename == '':
         return jsonify({'error': 'No selected file'}), 400
     if file and allowed_file(file.filename):
-        # Save the uploaded file to a temporary directory
+        # Ensure the images folder exists
+        images_folder = 'images/'
+        if not os.path.exists(images_folder):
+            os.makedirs(images_folder)
+        
+        # Save the uploaded file to the images directory
         filename = secure_filename(file.filename)
-        file_path = os.path.join('images/', filename)
+        file_path = os.path.join(images_folder, filename)
         file.save(file_path)
         # Process the uploaded file
         main(file_path)
