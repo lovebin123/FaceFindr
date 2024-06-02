@@ -154,7 +154,6 @@ def create_app():
         if file.filename == '':
             return jsonify({'error': 'No selected file'}), 400
         if file and allowed_file(file.filename):
-            # Ensure the images folder exists
             images_folder = 'images/'
             if not os.path.exists(images_folder):
                 os.makedirs(images_folder)
