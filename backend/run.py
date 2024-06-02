@@ -1,3 +1,4 @@
 from backend_app import python_backend
 app = python_backend()
-app.run()  # Or use any other suitable configuration
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5050)
