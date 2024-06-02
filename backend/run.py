@@ -1,3 +1,3 @@
-from .backend_app import create_app
-app = create_app()
+from .backend_app import python_backend
+app = python_backend()
 app.run(debug=False, port=5050)  # Or use any other suitable configuration
