@@ -14,7 +14,7 @@ function Facedetector() {
     formData.append('file', file);
 
     try {
-      const response = await fetch('https://facefindr-w75i.onrender.com/upload', {
+      const response = await fetch('http://localhost:5000/upload', {
         method: 'POST',
         mode: 'no-cors',
         body: formData
