@@ -1,3 +1,5 @@
 node_modules
 .env
 venv
+python backend/docker-compose.yml
+python backend/Dockerfile
