@@ -71,7 +71,7 @@ def main(image_path):
         connection_pool=None
     )
 
-    supabase_url = os.getenv('SUPABASE_URL')
+    supabase_url = os.getenv('SUPABASE_URL').replace(" ","")
     supabase_key = os.getenv('SUPABASE_KEY')
     client = supabase.create_client(supabase_url, supabase_key)
     face_array1, embeddings1 = find_similar_pairs(image_path)

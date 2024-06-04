@@ -3,3 +3,6 @@ node_modules
 venv
 python backend/docker-compose.yml
 python backend/Dockerfile
+python backend/.env
+python backend/retinaface.h5
+python backend/arcface_weights.h5

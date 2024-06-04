@@ -14,7 +14,7 @@ function Facedetector() {
     formData.append('file', file);
 
     try {
-      const response = await fetch('http://localhost:5000/upload', {
+      const response = await fetch('https://face-recognizer-zdyxexhcyq-uc.a.run.app//upload', {
         method: 'POST',
         mode: 'no-cors',
         body: formData
