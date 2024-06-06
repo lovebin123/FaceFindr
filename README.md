@@ -28,7 +28,7 @@ FaceFindr is a web application that allows users to upload photos and explore co
 1. Clone the repository:
     ```sh
     git clone https://github.com/yourusername/FacFindr.git
-    cd Facefindr/backend
+    cd FaceFindr/backend
     ```
 
 2. Create and activate a virtual environment:
