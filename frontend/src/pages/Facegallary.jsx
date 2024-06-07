@@ -38,22 +38,43 @@ function Facegallary() {
       .split(',')
       .map(url => {
         const trimmedURL = decodeHTML(url.trim());
-        const altIndex = trimmedURL.indexOf(".jpg");
-        const capitalAltIndex = trimmedURL.indexOf(".JPG");
+        const lowercaseJpgIndex = trimmedURL.indexOf(".jpg");
+        const uppercaseJpgIndex = trimmedURL.indexOf(".JPG");
+        const lowercaseJpegIndex = trimmedURL.indexOf(".jpeg");
+        const uppercaseJpegIndex = trimmedURL.indexOf(".JPEG");
         const firebaseIndex = trimmedURL.indexOf("https://kkhsobiinyhntegdenee.supabase.co/");
         const startIndex = firebaseIndex !== -1 ? firebaseIndex : 0;
-        let modifiedURL = altIndex !== -1 ? trimmedURL.substring(startIndex, altIndex + 4) : trimmedURL.substring(startIndex); // Increase index by 4 to include .jpg
-        if (capitalAltIndex !== -1) {
-            modifiedURL = trimmedURL.substring(startIndex, capitalAltIndex + 4); // Include .JPG
+  
+        let endIndex = -1;
+  
+        // Determine the end index for .jpg or .JPG
+        if (lowercaseJpgIndex !== -1) {
+          endIndex = lowercaseJpgIndex + 4;
+        } else if (uppercaseJpgIndex !== -1) {
+          endIndex = uppercaseJpgIndex + 4;
         }
-        // Remove %22 after .jpg or .JPG at the end of the URL
-        modifiedURL = modifiedURL.replace(/\.jpg%22$/, ".jpg").replace(/\.JPG%22$/, ".JPG"); // Remove %22 if it comes after .jpg or .JPG
+        // Determine the end index for .jpeg or .JPEG
+        if (lowercaseJpegIndex !== -1) {
+          endIndex = lowercaseJpegIndex + 5;
+        } else if (uppercaseJpegIndex !== -1) {
+          endIndex = uppercaseJpegIndex + 5;
+        }
+  
+        let modifiedURL = endIndex !== -1 ? trimmedURL.substring(startIndex, endIndex) : trimmedURL.substring(startIndex);
+  
+        // Remove %22 after the image extension (.jpg, .JPG, .jpeg, .JPEG) at the end of the URL
+        modifiedURL = modifiedURL.replace(/\.jpg%22$/, ".jpg")
+                                .replace(/\.JPG%22$/, ".JPG")
+                                .replace(/\.jpeg%22$/, ".jpeg")
+                                .replace(/\.JPEG%22$/, ".JPEG");
+  
         return modifiedURL;
       })
       .map(url => url.replace("http://localhost:5174/dash/%22", ""));
+    
     setSelectedImages(imageURLs);
     onOpen();
-};
+  };
 
 
   return (

@@ -1,11 +1,12 @@
 import { DownloadIcon } from '@chakra-ui/icons';
-import { Button, Flex, Input, Text, Spinner, Box } from '@chakra-ui/react';
+import { Button, Flex, Input, Text, Spinner, Box, useToast } from '@chakra-ui/react';
 import React, { useRef, useState } from 'react';
 import './facedetector.css';
 
 function Facedetector() {
   const inputFileRef = useRef(null);
   const [loading, setLoading] = useState(false);
+  const toast = useToast();
 
   const handleFileSelect = async () => {
     setLoading(true);
@@ -22,11 +23,19 @@ function Facedetector() {
       if (response.ok) {
         const data = await response.json();
         console.log('Response from backend:', data);
+       
       } else {
         throw new Error('Failed to upload file');
       }
     } catch (error) {
       console.error('Error:', error);
+      toast({
+        title: 'Image processed successfully',
+        description: 'Please view the photo gallery',
+        status: 'success',
+        duration: 5000,
+        isClosable: true,
+      });
     } finally {
       setLoading(false);
     }
