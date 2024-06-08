@@ -27,7 +27,7 @@ function Facedetector() {
     formData.append('file', file);
 
     try {
-      const response = await fetch('https://face-recognizer-zdyxexhcyq-uc.a.run.app/upload', {
+      const response = await fetch('http://127.0.0.1:5000/upload', {
         method: 'POST',
         mode: 'no-cors',
         body: formData
@@ -105,6 +105,7 @@ function Facedetector() {
               isOpen={isAlertOpen}
               onClose={onClose}
               motionPreset='slideInBottom'
+              closeOnOverlayClick={false}
             >
               <AlertDialogOverlay />
               <AlertDialogContent boxSize={'160px'} background={'#3A4750'}>
