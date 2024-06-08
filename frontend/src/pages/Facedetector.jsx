@@ -2,14 +2,26 @@ import { DownloadIcon } from '@chakra-ui/icons';
 import { Button, Flex, Input, Text, Spinner, Box, useToast } from '@chakra-ui/react';
 import React, { useRef, useState } from 'react';
 import './facedetector.css';
+import {
+  AlertDialog,
+  AlertDialogBody,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogContent,
+  AlertDialogOverlay,
+  AlertDialogCloseButton,
+} from '@chakra-ui/react';
 
 function Facedetector() {
   const inputFileRef = useRef(null);
   const [loading, setLoading] = useState(false);
+  const [isAlertOpen, setIsAlertOpen] = useState(false);
+  const onClose = () => setIsAlertOpen(false);
   const toast = useToast();
 
   const handleFileSelect = async () => {
     setLoading(true);
+    setIsAlertOpen(true);
     const file = inputFileRef.current.files[0];
     const formData = new FormData();
     formData.append('file', file);
@@ -23,7 +35,6 @@ function Facedetector() {
       if (response.ok) {
         const data = await response.json();
         console.log('Response from backend:', data);
-       
       } else {
         throw new Error('Failed to upload file');
       }
@@ -38,6 +49,7 @@ function Facedetector() {
       });
     } finally {
       setLoading(false);
+      setIsAlertOpen(false);
     }
   };
 
@@ -55,7 +67,7 @@ function Facedetector() {
           fontSize="sm"
           id="box"
           textAlign="center"
-          position={'relative'}  // changed from fixed to relative
+          position={'relative'}
           borderWidth={2}
           borderColor={'#00ADB5'}
         >
@@ -89,7 +101,21 @@ function Facedetector() {
             background="rgba(0, 0, 0, 0.5)"
             borderRadius={12}
           >
-            <Spinner size="xl" color="#00ADB5" />
+            <AlertDialog
+              isOpen={isAlertOpen}
+              onClose={onClose}
+              motionPreset='slideInBottom'
+            >
+              <AlertDialogOverlay />
+              <AlertDialogContent boxSize={'160px'} background={'#3A4750'}>
+                <AlertDialogBody >
+                <Flex  direction={'column'} alignItems={'center'} justifyContent={'center'}>
+                <Spinner size="xl" color="#00ADB5" />
+                  <Text color={'#EEEEEE'}>Image is being processed. Do not refresh the page</Text>
+                  </Flex>
+                </AlertDialogBody>
+              </AlertDialogContent>
+            </AlertDialog>
           </Flex>
         )}
       </Box>
