@@ -98,7 +98,7 @@ function Facegallary() {
           <ModalBody>
             <Flex flexWrap="wrap" gap={10} flexShrink={1}>
               {selectedImages.map((image, index) => (
-                <Image width={'100%'} height={'100%'} objectFit={'cover'} margin={"0 auto"} position={'relative'} top={4} borderRadius={12} key={index} src={image.trim()} w={'18vw'} />
+                <Image boxSize={'md'}  objectFit={'cover'} margin={"0 auto"} position={'relative'} top={4} borderRadius={12} key={index} src={image.trim()} w={'18vw'} />
               ))}
             </Flex>
           </ModalBody>
