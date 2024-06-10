@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Flex, useDisclosure, Button, Image, Avatar, Stack, CircularProgress } from '@chakra-ui/react';
 import axios from 'axios';
+import { Gallery } from "react-grid-gallery";
+
 import {
   Modal,
   ModalOverlay,
@@ -93,12 +95,13 @@ function Facegallary() {
       )}
       <Modal isOpen={isOpen} onClose={onClose} size={'4xl'} >
         <ModalOverlay />
-        <ModalContent background={'#3A4750'}>
+        <ModalContent background={'#3A4750'} >
           <ModalCloseButton color={'#EEEEEE'} />
           <ModalBody>
-            <Flex flexWrap="wrap" gap={10} flexShrink={1}>
+            <Flex flex={1} alignItems={'start'}  flexWrap={'wrap'}   gap={6}    >
               {selectedImages.map((image, index) => (
-                <Image width={'100%'} height={'100%'} objectFit={'cover'} margin={"0 auto"} position={'relative'} top={4} borderRadius={12} key={index} src={image.trim()} w={'18vw'} />
+                
+                <Image  width={'20vw'} height={'100%'} objectFit={'cover'} margin={"0 auto"} position={'relative'} top={4} borderRadius={12} key={index} src={image.trim()}   />
               ))}
             </Flex>
           </ModalBody>
