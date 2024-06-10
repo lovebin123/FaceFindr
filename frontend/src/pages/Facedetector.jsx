@@ -112,7 +112,7 @@ function Facedetector() {
                 <AlertDialogBody >
                 <Flex  direction={'column'} alignItems={'center'} justifyContent={'center'}>
                 <Spinner size="xl" color="#00ADB5" />
-                  <Text color={'#EEEEEE'}>Image is being processed. Do not refresh the page</Text>
+                  <Text color={'#EEEEEE'}>Image is being processed.May take upto a minute. Do not refresh the page</Text>
                   </Flex>
                 </AlertDialogBody>
               </AlertDialogContent>
