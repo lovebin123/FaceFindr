@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Flex, useDisclosure, Button, Image, Avatar, Stack, CircularProgress } from '@chakra-ui/react';
 import axios from 'axios';
-import { Gallery } from "react-grid-gallery";
-
 import {
   Modal,
   ModalOverlay,
