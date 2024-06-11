@@ -96,10 +96,10 @@ function Facegallary() {
         <ModalContent background={'#3A4750'} >
           <ModalCloseButton color={'#EEEEEE'} />
           <ModalBody>
-            <Flex flex={1} alignItems={'start'}  flexWrap={'wrap'}   gap={6}    >
+            <Flex flex={1} alignItems={'center'} alignSelf={'flex-end'}  justifyContent={'center'}  flexWrap={'wrap'}  gridGap={'0.5rem'} >
               {selectedImages.map((image, index) => (
                 
-                <Image  width={'20vw'} height={'100%'} objectFit={'cover'} margin={"0 auto"} position={'relative'} top={4} borderRadius={12} key={index} src={image.trim()}   />
+                <Image  width={'24rem'} height={'auto'}  mr={4} borderRadius={12} key={index} src={image.trim()}   />
               ))}
             </Flex>
           </ModalBody>
