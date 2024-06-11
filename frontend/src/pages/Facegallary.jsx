@@ -10,7 +10,6 @@ import {
   ModalCloseButton,
 } from '@chakra-ui/react';
 
-
 function Facegallary() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [keys, setKeys] = useState([]);
