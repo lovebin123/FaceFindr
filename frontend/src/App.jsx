@@ -9,7 +9,7 @@ import { Analytics } from "@vercel/analytics/react"
 function App() {
     return (
         <div className='App'>
-        <Analytics>
+        <Analytics></Analytics>
            <ParticleEffect />
             <ChakraProvider>
             
@@ -22,7 +22,7 @@ function App() {
                     </Route>
                 </Routes>
             </ChakraProvider>
-            </Analytics>
+            
         </div>
     );
 }
