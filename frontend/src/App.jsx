@@ -5,9 +5,11 @@ import Facedetector from './pages/Facedetector';
 import { Meteors } from "./components/ui/meteors";
 import Facegallary from "./pages/Facegallary";
 import ParticleEffect from "./components/ui/particle";
+import { Analytics } from "@vercel/analytics/react"
 function App() {
     return (
         <div className='App'>
+        <Analytics>
            <ParticleEffect />
             <ChakraProvider>
             
@@ -20,6 +22,7 @@ function App() {
                     </Route>
                 </Routes>
             </ChakraProvider>
+            </Analytics>
         </div>
     );
 }
