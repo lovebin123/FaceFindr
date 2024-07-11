@@ -27,7 +27,7 @@ function Facedetector() {
     formData.append('file', file);
 
     try {
-      const response = await fetch('https://face-recognizer-zdyxexhcyq-uc.a.run.app/upload', {
+      const response = await fetch('https://face-recognizer1-zdyxexhcyq-uc.a.run.app/upload', {
         method: 'POST',
         mode: 'no-cors',
         body: formData
@@ -91,11 +91,6 @@ function Facedetector() {
         </Flex>
         {loading && (
           <Flex
-            position="absolute"
-            top="0"
-            left="0"
-            right="0"
-            bottom="0"
             justifyContent="center"
             alignItems="center"
             background="rgba(0, 0, 0, 0.5)"
@@ -110,7 +105,7 @@ function Facedetector() {
               <AlertDialogOverlay />
               <AlertDialogContent boxSize={'160px'} background={'#3A4750'}>
                 <AlertDialogBody >
-                <Flex  direction={'column'} alignItems={'center'} justifyContent={'center'}>
+                <Flex  direction={'column'} alignItems={'center'} justifyContent={'center'} >
                 <Spinner size="xl" color="#00ADB5" />
                   <Text color={'#EEEEEE'}>Image is being processed.May take upto a minute. Do not refresh the page</Text>
                   </Flex>
