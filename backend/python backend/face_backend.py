@@ -175,4 +175,4 @@ def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in {'jpg', 'jpeg', 'png', 'gif'}
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0",port=5000,debug=True)  # Run the app in debug mode for local testing
+    app.run(host="0.0.0.0",port=5000,debug=False)  # Run the app in debug mode for local testing
