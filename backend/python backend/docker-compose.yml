@@ -1,0 +1,19 @@
+version: '3'
+services:
+  web:
+    build: .
+    ports:
+      - "5000:5000"
+    environment:
+      REDIS_HOST: ${REDIS_HOST} 
+      REDIS_PORT: ${REDIS_PORT} 
+      REDIS_PASSWORD: ${REDIS_PASSWORD} 
+      SUPABASE_URL: ${SUPABASE_URL} 
+      SUPABASE_KEY: ${SUPABASE_KEY}
+    depends_on:
+      - redis
+  redis:
+    image: "redis:alpine"
+    environment:
+      - REDIS_PASSWORD=${REDIS_PASSWORD}
+    command: ["redis-server", "--requirepass", "${REDIS_PASSWORD}"]
