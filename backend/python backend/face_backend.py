@@ -95,7 +95,7 @@ def main(image_path):
         for url, emb in zip(file_urls, embeddings1):
             r.hset(url, mapping={'embedding': str(emb), 'matched_photos': str(matched_photos)}) #Here we have used Redis datastructure hashset for faster retrieval and traversal of data
     else:
-    # If already faces are present in database then we traverse through each face and compare the corresponding embedding with the embeddings newly generated embeddings
+    # If already faces are present in database then we traverse through each face and compare the corresponding embedding with the   embeddings newly generated embeddings
         for key in r.keys():
             url = key
             emb = r.hget(url, 'embedding')
