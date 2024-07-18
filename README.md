@@ -3,7 +3,6 @@
 FaceFindr is a web application that allows users to upload photos and explore connections between faces across different images. Click on a face to see all the images where that face appears. Built with React JS, Redis, Flask, and DeepFace for face detection and recognition.
 
 ## Features
-
 - Upload images and detect faces.
 - Identify and match faces across multiple images.
 - Explore connections by clicking on a face to view all images containing that face.
@@ -78,4 +77,4 @@ FaceFindr is a web application that allows users to upload photos and explore co
 
 1. Open your web browser and go to `http://localhost:5173`.
 2. Upload an image using the upload button.
-3. Click on face gallery to view all images containing that face.
+3. Click on photo gallery to view all images containing that face.
