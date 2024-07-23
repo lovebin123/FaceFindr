@@ -13,6 +13,7 @@ FaceFindr is a web application that allows users to upload photos and explore co
 - **Redis**: In-memory data structure store for fast access to face data.
 - **Flask**: Web framework for the backend server.
 - **DeepFace**: Facial recognition library for detecting and matching faces.
+- **Docker**: For dockerizing the backend and hosting in cloud.
 
 ## Installation
 
