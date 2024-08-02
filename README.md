@@ -79,3 +79,7 @@ FaceFindr is a web application that allows users to upload photos and explore co
 1. Open your web browser and go to `http://localhost:5173`.
 2. Upload an image using the upload button.
 3. Click on photo gallery to view all images containing that face.
+
+##Sample Working
+
+https://github.com/user-attachments/assets/255cbe24-0e6c-417b-a684-01fe9a0aadb2
