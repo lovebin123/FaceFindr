@@ -19,7 +19,7 @@ function Facegallary() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await axios.get('http://localhost:3001/dash/keys');
+        const response = await axios.get('https://facefindr-0dej.onrender.com/dash/keys');
         setKeys(response.data);
       } catch (error) {
         console.log(error);
