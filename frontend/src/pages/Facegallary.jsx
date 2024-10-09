@@ -19,7 +19,7 @@ function Facegallary() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await axios.get('https://facefindr-0dej.onrender.com/dash/keys');
+        const response = await axios.get('http://localhost:3001/dash/keys');
         setKeys(response.data);
       } catch (error) {
         console.log(error);
@@ -43,6 +43,8 @@ function Facegallary() {
       .map(url => {
         const trimmedURL = decodeHTML(url.trim());
         const lowercaseJpgIndex = trimmedURL.indexOf(".jpg");
+        const lowercasePngIndex = trimmedURL.indexOf(".png");
+        const UppercasePngIndex = trimmedURL.indexOf(".PNG");
         const uppercaseJpgIndex = trimmedURL.indexOf(".JPG");
         const lowercaseJpegIndex = trimmedURL.indexOf(".jpeg");
         const uppercaseJpegIndex = trimmedURL.indexOf(".JPEG");
@@ -57,6 +59,11 @@ function Facegallary() {
         } else if (uppercaseJpgIndex !== -1) {
           endIndex = uppercaseJpgIndex + 4;
         }
+        if (lowercasePngIndex !== -1) {
+          endIndex = lowercasePngIndex + 4;
+        } else if (UppercasePngIndex !== -1) {
+          endIndex = UppercasePngIndex + 4;
+        }
         // Determine the end index for .jpeg or .JPEG
         if (lowercaseJpegIndex !== -1) {
           endIndex = lowercaseJpegIndex + 5;
@@ -70,7 +77,9 @@ function Facegallary() {
         modifiedURL = modifiedURL.replace(/\.jpg%22$/, ".jpg")
                                 .replace(/\.JPG%22$/, ".JPG")
                                 .replace(/\.jpeg%22$/, ".jpeg")
+                                .replace(/\.png%22$/,".png")
                                 .replace(/\.JPEG%22$/, ".JPEG");
+                                
 
         return modifiedURL;
       })

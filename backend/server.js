@@ -13,7 +13,7 @@ app.get('/dash/keys', async (req, res) => {
   try {
     const keys = await redisClient.keys('*');
     const results = await Promise.all(keys.map(async key => {
-      const values = await redisClient.hget(key,'matched_photos'); // Get all field-value pairs for the key
+      const values = await redisClient.hget(key,'matched_photos'); 
       return { key, values };
     }));
     res.json(results); // Send the results as JSON
