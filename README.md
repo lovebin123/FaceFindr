@@ -18,4 +18,5 @@ FaceFindr is a web application that allows users to upload photos and explore co
 
 ##Sample Working
 
-https://github.com/user-attachments/assets/255cbe24-0e6c-417b-a684-01fe9a0aadb2
+https://github.com/user-attachments/assets/0df9560f-4e3b-4559-838d-5469d9f215de
+
